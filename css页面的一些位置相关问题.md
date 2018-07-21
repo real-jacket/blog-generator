@@ -11,14 +11,16 @@ tags:
 &emsp;display:block;
 &emsp;clear:both;
   }
-
 ![清除浮动](https://upload-images.jianshu.io/upload_images/12812641-251d96f99a0a0f15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## 左中右布局 
 左中右布局也属于横向布局，其实就在右边再加一个`<div>`而已。再就利用定位属性，在页面中实现左中右布局。
 ## 水平居中
 实现水平居中的方式有多种，常见的： 
 * 如果是文本的话，使用`text-align="center"`即可实现；
-* 如果是块状元素的话，直接通过设置`margin: 0 auto;`即可实现`<div>`居中；![左右居中](https://upload-images.jianshu.io/upload_images/12812641-967469b306ae2890.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* 如果是块状元素的话，直接通过设置`margin: 0 auto;`即可实现`<div>`居中；
+![左右居中](https://upload-images.jianshu.io/upload_images/12812641-967469b306ae2890.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## 垂直居中
 实现垂直居中并不容易，目前最基本的几种方式：
 * 文本居中利用文字行高等于所在元素高度：`line-height`=`height`实现；如果知道文本确切的行高与其高度，则可以利用padding上下相等实现文本居中。
