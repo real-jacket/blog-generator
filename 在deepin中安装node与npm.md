@@ -28,9 +28,9 @@ pwd
 4.查看node版本
 >node -v
 
-5.将node和npm设置为全局
->sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/node /usr/local/bin/node
-sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/npm /usr/local/bin/npm
+5.将node和npm设置为全局(注意路径为第3步的路径)
+>sudo ln /home/ubuntu/node-v8.11.4-linux-x64/bin/node /usr/local/bin/node
+sudo ln /home/ubuntu/node-v8.11.4-linux-x64/bin/npm /usr/local/bin/npm
 pwd
 
 这种方法配置的环境容易出问题，在安装http-server时依然报错。
