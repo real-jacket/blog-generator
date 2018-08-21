@@ -1,7 +1,7 @@
 ---
 title: 在deepin中安装node与npm
 date: 2018-08-16 11:28:26
-tags: 学习笔记
+tags: deepin系统相关
 ---
 最近装了deepin15.6，想安装http-server服务，结果报错，原来是npm版本太老，以下罗列几种node安装方式，这几种方式适用Linux/ubantu/deepin系统。
 ## 1、官方途径：通过包管理器方式安装；
