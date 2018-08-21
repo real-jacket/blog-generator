@@ -75,10 +75,10 @@ Content-Length: 10
 >Date: Tue, 10 Oct 2017 09:19:47 GMT
 >Etag: "54d9749e-460b"
 >Server: bfe/1.0.8.18
->空行
-><html\>
-><head\>
-><meta http-equiv="content-type" content="text/html;charset=utf-8"\> ……
+>
+>\<html>
+>\<head>
+>\<meta http-equiv="content-type" content="text/html;charset=utf-8"> ……
 
 响应格式：
 >1 协议/版本号 状态码 状态解释
@@ -111,7 +111,7 @@ Content-Length: 10
 7. 如果有请求的第四部分，那么在「FormData」或「Payload」里面可以看到
 
 ### 常见的HTTP状态码
-* 1xx　Infiormation（信息性状态码）　接受的请求正在处理
+* 1xx　Informational（信息性状态码）　接受的请求正在处理
 * 2xx　Success（成功状态码）　请求正常处理完毕
     * 200 ok　表示响应成功，从客户端发来的请求在服务器被正常处理了。
     * 204 No Content　表示服务器接受的请求已成功处理，但没有资源返回。
