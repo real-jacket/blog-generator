@@ -22,7 +22,7 @@ tags: deepin系统相关
 注意：
     1. 要在安装包所在的目录使用，记得修改安装包的文件名。
     2. 如果打开客户端半天没有反应，重启电脑即可。 
-### 添加vpn配置信息
+### 添加ssr配置信息
    跟在window上使用一样，正常添加服务器相关配置即可。
    ![electron-ssr界面](https://upload-images.jianshu.io/upload_images/12812641-b80fbfcbf493e9f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
