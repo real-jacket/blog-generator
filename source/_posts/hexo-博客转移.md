@@ -21,13 +21,14 @@ categories:
 主要是配置文件，由于我怕出问题，基本把所有的相关配置文件都上传了，我的目录如下：
 
 ```
-scaffolds
-source
-themes
-.gitignore
-_config.yml
-package-lock.json
-package.json
+hexo
+|--scaffolds
+|--source
+|--themes
+|--.gitignore
+|--_config.yml
+|--package-lock.json
+|--package.json
 ```
 
 ### 2、在另一台电脑（系统）初始化一个hexo博客目录
@@ -62,9 +63,18 @@ hexo s // 本地测试hexo博客
 这样配置成功后，以后只需要把写的博客、相关的主题设置文件上传到github，其它的电脑直接从github上pull就ok了。
 
 >注意:
->千万不要将相关的环境配置文件提交，比如package.json，不然会导致不同的电脑环境相互冲突，需要重新配置环境。
+>千万不要将相关的环境配置文件提交，比如package.json，保持所有的电脑配置文件一致，不同的电脑本地进行配置，不然会导致不同的电脑环境相互冲突，需要重新配置环境。
 
 ## 遇到的一个问题
 
 ### nodejieba模块安装出错
 
+不同系统之间免不了出问题，最近在公司趁闲点写点博客，于是打算在公司的电脑按上述方法进行部署。结果报错，卡在nodejieba分词库安装失败，node-gyp rebuild 失败。
+
+自然第一想法，谷歌搜索报错，找到[nodejieba分词库安装问题](https://github.com/Mrminfive/hexo-theme-skapp/issues/23)相关答案，顺着找到[node-gyp官方文档](https://www.npmjs.com/package/node-gyp),原来是node-gyp的python版本只支持2.7，官方给出了前置安装的两个办法，人懒的我自然选择前一种方法
+```
+npm install --global --production windows-build-tools
+
+npm install -g node-gyp
+```
+安装完后，删掉node_modules,重新安装依赖，万事大吉，成功运行！至此，我这篇博客就是写到一般上传到github后，回家拉取继续写，顺利完成。
