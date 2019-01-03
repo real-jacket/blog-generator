@@ -78,3 +78,9 @@ npm install --global --production windows-build-tools
 npm install -g node-gyp
 ```
 安装完后，删掉node_modules,重新安装依赖，万事大吉，成功运行！至此，我这篇博客就是写到一般上传到github后，回家拉取继续写，顺利完成。
+
+### themes文件git嵌套
+
+由于nextz主题内的_config.yml也涉及到一些配置，为避免重新配置，最好把themes下的主题文件也上传到github。但是，由于themes下主题内部也存在git仓库，造成了git嵌套，自动被git忽略，所以要先着手解决git嵌套问题。
+
+研究了一会，目前一种简单的办法，把themes内部的`.git`本地仓库删掉，这里要注意将next文件夹移出blog，然后移入，才能重新被git发现。这样我们就实现了themes主题配置的保存。
