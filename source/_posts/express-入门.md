@@ -2,7 +2,11 @@
 title: express 入门
 date: 2018-10-25 17:33:04
 tags: express
+categories:
+- node
+- express
 ---
+
 ## 什么是Express？
 
 官网介绍：Express是基于Node.js平台，快速、开放、极简的Web开发框架。
