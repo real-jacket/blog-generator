@@ -65,9 +65,9 @@ hexo s // 本地测试hexo博客
 >注意:
 >千万不要将相关的环境配置文件提交，比如package.json，保持所有的电脑配置文件一致，不同的电脑本地进行配置，不然会导致不同的电脑环境相互冲突，需要重新配置环境。
 
-## 遇到的一个问题
+## 遇到的问题
 
-### nodejieba模块安装出错
+### nodejieba模块安装出错（windows）
 
 不同系统之间免不了出问题，最近在公司趁闲点写点博客，于是打算在公司的电脑按上述方法进行部署。结果报错，卡在nodejieba分词库安装失败，node-gyp rebuild 失败。
 
@@ -84,3 +84,35 @@ npm install -g node-gyp
 由于nextz主题内的_config.yml也涉及到一些配置，为避免重新配置，最好把themes下的主题文件也上传到github。但是，由于themes下主题内部也存在git仓库，造成了git嵌套，自动被git忽略，所以要先着手解决git嵌套问题。
 
 研究了一会，目前一种简单的办法，把themes内部的`.git`本地仓库删掉，这里要注意将next文件夹移出blog，然后移入，才能重新被git发现。这样我们就实现了themes主题配置的保存。
+
+### 执行hexo命令报错（deepin）
+
+执行`hexo s`命令报错：`Error: ENOSPC: no space left on device,`
+大概是指监听太多node_modules 嵌套了：max_user_watches，谷歌搜到相关[答案](https://github.com/npm/npm/issues/1131),最终的解决办法：[增大最大监听数量](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)
+由于我是deepin系统，命令行执行：
+`echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+
+### npm install安装环境报错（deepin）
+
+报错：
+`pngquant-bin@4.0.0 postinstall: node lib/install.js`
+`Failed at the pngquant-bin@4.0.0 postinstall script.`
+报错大概是指pngquant-bin这个模块运行出错。谷歌搜索答案，得知pngquant-bin在Linux下需要一些包libpng-dev，但是仅仅安装这个包是不够的。
+具体参考：
+[npm.js包pngquant-bin](https://www.npmjs.com/package/pngquant-bin)
+[node_modules/pngquant-bin/vendor/pngquant` binary doesn't seem to work correctly](https://github.com/imagemin/pngquant-bin/issues/78)
+[pngquant failed to build, make sure that libpng-dev is installed](https://blog.csdn.net/zgrbsbf/article/details/81911999)
+
+解决方案：
+运行以下命令
+```
+sudo apt-get install libpng-dev
+sudo npm install -g pngquant-bin
+```
+一般而言以上命令就可以解决了，但是有时候pngquant-bin安装报错，就尝试一下命令：
+`sudo apt-get install -y build-essential libpng-dev`
+如过还失败，再尝试：
+```
+sudo apt-get update 
+sudo apt-get install libtiff5-dev libtiff5 libjbig-dev
+```
