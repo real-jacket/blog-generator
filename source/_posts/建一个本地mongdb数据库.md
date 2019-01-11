@@ -61,6 +61,63 @@ categories:
 
 ## robo 3T -mongodb可视化工具
 
+虽然个人喜欢用命令行进行安装，因为这样方便简单，但是用命令行查看数据库就比较不方便了毕竟，查询条件多且复杂的话，命令行界面就不够友好了，这里介绍使用robo 3T，一个mongdb数据库可视化GUI工具。
+
+### 安装
+
+1、首先在[robo 3T官网](https://robomongo.org/download)下载相应安装包,然后使用tar命令进行解压：
+
+```
+tar -xzf robo3t-1.2.1-linux-x86_64-3e50a65.tar.gz
+```
+
+2、创建一个命令将所有文件全部拷贝过去
+
+```
+sudo mkdir /usr/local/bin/robomongo
+
+sudo mv robo3t-1.2.1-linux-x86_64-3e50a65.tar.gz /usr/local/bin/robomongo
+```
+
+3、进入文件robomongo文件目录，给robo 3T添加权限
+
+```
+cd /usr/local/bin/robomongo/bin
+
+sudo chmod +x robo3t
+```
+
+4、给robo 3T创建快捷启动命令
+
+```
+sudo vi ~/.bashrc // 用vim编辑.bashrc文件
+
+alias robomongo="/usr/local/bin/robomongo/bin/robo3t" // 在最后一行添加该命令,保存退出
+
+source ~/.bashrc // 使命令生效
+
+```
+
+### 连接mongdb数据库
+
+1、首先按文章前面说的运行数据库，本地数据库运行：
+
+```
+sudo service mongod start
+
+mongo
+```
+
+2、启动robo 3T进行连接
+
+```
+robomongo
+```
+
+3、输入i地址与端口连接指定数据库
+可以连接远程数据库
+
+
 ## 基本的数据库操作
 
 ## 遇到的问题
