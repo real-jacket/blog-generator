@@ -17,6 +17,7 @@ categories:
 ### 命令行安装
 
 由于我是deepin系统，是基于debian的，而且个人更喜欢用命令行进行安装,于是找到了[debian的安装指导](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/#install-mongodb-community-edition)
+<!-- more -->
 
 1. 导入mongodb 公共 GPG 密钥
    ```

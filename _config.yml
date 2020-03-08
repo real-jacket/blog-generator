@@ -9,10 +9,10 @@ subtitle: 小木de
 # subtitle_desc: "无关风月，随便写写...."
 
 description: "任何事情都会有皆大欢喜的结果，如果没有，那就证明没有到最后..."
-keywords:
+keywords: "前端开发、全栈工程师"
 author: 小木
 language: zh-CN
-timezone:
+# timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -30,6 +30,13 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
+# Search 
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -76,7 +83,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next7
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
